@@ -8,7 +8,7 @@ import java.util.Properties;
 public class SendOTPService {
     public static void sendOTP(String email, String genOTP) {
         String to = email;
-        String from = "shaishavgupta598@gmail.com";
+        String from = ""; // Put your mail through which you want to do the authentication via otp service
         String host = "smtp.gmail.com";
 
         Properties properties = System.getProperties();
@@ -19,7 +19,7 @@ public class SendOTPService {
 
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from, "ekyjqbqhfcnklrtc");
+                return new PasswordAuthentication(from, ""); // put your gmail App Password (you can genereate from security section in the gmail) in this field.
             }
         });
         try {
